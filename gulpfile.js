@@ -9,7 +9,10 @@ const runSequence = require('run-sequence');
 const ghPages = require('gulp-gh-pages');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
-
+gulp.task('deploy', function() {
+return gulp.src('./dist/**/*')
+  .pipe(ghPages());
+});
 let dev = true;
 
 
@@ -178,9 +181,4 @@ gulp.task('default', () => {
     dev = false;
     runSequence(['clean', 'wiredep'], 'build', resolve);
   });
-
-  gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages());
-});
 });

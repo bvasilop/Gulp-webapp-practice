@@ -4,7 +4,7 @@ practice installing gulp yeoman workflow
 **Steps for installing Gulp, Webapp and Yeoman**
 1) Create repo in Github.
 
-2) Clone repo to local machine in terminal:   **git clone "git@github.com:bvasilop/Gulp-webapp-practice.git"**
+2) Clone repo to local machine in terminal:   **git clone "git@github.com:{github user name}/{project name}.git"**
 
 3) Enter proper project directory:   **cd Gulp-webapp-practice**
 
@@ -30,15 +30,15 @@ practice installing gulp yeoman workflow
 
 14) Setup to publish on Github Pages:  **npm install --save-dev gulp-gh-pages**
 
-15) Enter Gulpfile.js and add the following:  const ghPages = require('gulp-gh-pages');
+15) Enter Gulpfile.js and add the following:  **const ghPages = require('gulp-gh-pages');
 
 gulp.task('deploy', function() {
-return gulp.src('./dist/**/*')
-  .pipe(ghPages());
+return gulp.src('./dist/**/*')*
+  **.pipe(ghPages());
 });**
 
-16) Final Changes in Gulpfile.js should look like this:   // generated on 2017-07-11 using generator-webapp 3.0.1
-const gulp = require('gulp');
+16) Final Changes in Gulpfile.js should look like this in text editor:   
+**const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const del = require('del');
@@ -48,8 +48,8 @@ const ghPages = require('gulp-gh-pages');
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 gulp.task('deploy', function() {
-return gulp.src('./dist/**/*')
-  .pipe(ghPages());
+return gulp.src('./dist/**/*')*
+  **.pipe(ghPages());
 });**
 
 17) Add changes to gh-pages:  **git add -A**
